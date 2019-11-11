@@ -12,7 +12,6 @@ the_post();
 
 ?>
 
-<div class="vf-body">
     <main class="embl-grid embl-grid--has-centered-content"
         style="background-color: #fff; padding-top: 48px; margin-bottom: 0; ">
         <div class="article-left-col">
@@ -165,5 +164,4 @@ while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
         </div>
 		
     </section>
-</div>
 <?php get_template_part('partials/footer');?>

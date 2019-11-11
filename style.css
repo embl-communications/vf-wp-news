@@ -9,6 +9,10 @@ Version:		 1.0.0
 Text Domain:	 vf-wp-news-main
 */
 
+.vf-body {
+	background-color: #f3f3f3;
+}
+
 /* ------ AUTHOR PAGE ------ */
 
 .author-description h4 {

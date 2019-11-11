@@ -26,7 +26,7 @@ if (is_search()) {
 }
 
 ?>
-<section class="vf-inlay">
+<section class="vf-inlay" style="background-color: #f3f3f3;">
     <div class="vf-inlay__content" style="background-color: #fff;">
         <main class="vf-inlay__content--full-width | hero-container">
             <h3 class="vf-links__heading">Featured</h3>&nbsp;&nbsp;<i class="fas fa-arrow-circle-right"></i>

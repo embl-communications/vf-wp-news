@@ -6,4 +6,4 @@
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body class="vf-body "<?php body_class(); ?>>
