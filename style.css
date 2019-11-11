@@ -1,0 +1,255 @@
+/* 
+Theme Name:		 vf-wp-news-main
+Theme URI:		 http://childtheme-generator.com/
+Description:	 vf-wp-news-main is a child theme of VF-WP, created by ChildTheme-Generator.com
+Author:			 Szymon Kasprzyk
+Author URI:		 http://childtheme-generator.com/
+Template:		 vf-wp
+Version:		 1.0.0
+Text Domain:	 vf-wp-news-main
+*/
+
+/* ------ AUTHOR PAGE ------ */
+
+.author-description h4 {
+	color: #fff;
+}
+
+ .author-description i {
+	color: #fff;
+	font-size: 28px;
+	padding-right: 10px;
+}
+
+.author-heading {
+	color: #fff;
+}
+
+.vf-content .author-description .author-name  {
+	margin-top: 0;
+}
+
+.author-container .author-summary {
+	padding: 0;
+}
+
+.vf-pagination {
+	    margin: 4%;
+}
+
+.author-latest-container .vf-summary__title {
+	font-size: 19px;
+	font-weight: 400;
+	margin: 16px 0;
+}
+
+.author-latest-container .vf-summary__text {
+		font-size: 16px;
+}
+
+/* ----- CATEGORY PAGE ----*/
+
+.category-latest .vf-summary__title {
+	font-size: 19px;
+	font-weight: 400;
+	margin: 16px 0;
+}
+
+.category-latest .vf-summary__text {
+		font-size: 16px;
+}
+
+/* ---CONTENT PAGE----*/
+
+.social-share-box {
+	padding-top: 12px;
+	width: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.author-box {
+	margin-left: 10px;
+}
+
+.post-categories a {
+	font-family: "IBM Plex Sans", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.57;
+}
+
+.related-posts-container .vf-summary__title {
+	font-size: 19px;
+	font-weight: 400;
+	margin: 16px 0;
+}
+
+.related-posts-container .vf-summary__text {
+		font-size: 16px;
+}
+
+/* ----HOME PAGE---- */
+
+
+.icon-green {
+	font-size: 32px;
+	color: #18974C;
+}
+
+.latest-title-column {
+	color: #3B6FB6;
+	min-width: 150px;
+}
+
+.vf-inlay__content h3 {
+	display: inline-block;
+}
+
+i {
+	font-size: 21px;
+}
+
+.magazine-archive {
+	max-width: 300px;
+	grid-column-gap: 56px;
+}
+
+.magazine-box-cover .vf-button {
+	display: block;
+}
+
+.magazine-box-content {
+	margin-top: 4%;
+}
+.magazine-box-cover .vf-text-body--3 {
+	font-style: italic;
+	color: #707372;
+}
+
+.magazine-summary-content .vf-text-heading--5 {
+	font-size: 16px;
+}
+
+.topics-info {
+	margin-bottom: 0;
+}
+
+.latest-posts-container .vf-summary__title {
+	font-size: 19px;
+	font-weight: 400;
+	margin: 16px 0;
+}
+
+.latest-posts-container .vf-summary__text {
+	font-size: 16px;
+}
+
+.category-top-stories article,
+.hero-right-column article,
+.hero-left-column article,
+.pow-container,
+.author-container {
+	border-bottom: 8px solid #18974C;
+}
+
+.hero-right-column .article-summary {
+	min-height: 158px;
+}
+
+.hero-right-column {
+	min-width: 320px;
+}
+
+.hero-left-column img {
+	min-width: 700px;
+}
+
+.hero-left-column .article-summary {
+	height: 319px;
+}
+
+.hero-right-column article {
+	margin-bottom: 10px;
+}
+
+.hero-right-column .vf-summary__title {
+	font-size: 19px;
+}
+.hero-left-column .vf-summary__title {
+	margin-bottom: 16px;
+}
+
+.pow-title .vf-summary__link,
+.pow-title .vf-summary__link:visited {
+	font-size: 24px;
+	color: #ffffff;
+}
+
+.pow-article-summary .vf-summary__link,
+.pow-article-summary .vf-summary__link:visited,
+.pow-article-summary .vf-summary__date {
+	color: #ffffff;
+}
+
+.pow-article-summary .vf-summary__text {
+	font-size: 19px;
+	color: #D0D0CE;
+}
+
+.pow-article-summary .vf-links__heading {
+	font-size: 32px;
+	font-weight: 200;
+	font-style: italic;
+}
+
+.pow-title {
+	margin-bottom: 16px;
+}
+
+.pow-container img {
+	max-width: 90%;
+}
+
+.pow-article-summary {
+	padding-top: 32px;
+}
+
+.pow-summary-title,
+.pow-summary-date {
+	color: #ffffff; 
+}
+
+.pow-heading,
+.pow-summary-text {
+	color: #D0D0CE;
+}
+
+.article-summary {
+	background-color: #ffffff;
+}
+
+.vf-grid .hero-unit {
+    grid-column-gap: 15px;
+}
+
+.vf-summary--article img {
+    max-width: 100%;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.hero-container {
+	background-color:  #fff;
+}
+
+.hero-container .article-summary {
+	padding: 15px 0 0 0;
+}
+
+
+
+
