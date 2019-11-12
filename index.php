@@ -106,51 +106,46 @@ while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
         </main>
     </div>
 	
-    <div class="vf-inlay__content vf-u-background-color-ui--white">
-        <main class="vf-inlay__content--full-width">
-            <h3 class="vf-links__heading">Read the latest Issue of EMBL etc.</h3>&nbsp;&nbsp;<i
-                class="fas fa-arrow-circle-right"></i>
-            <div class="vf-grid | magazine-box-content">
-                <div class="magazine-box-cover">
-                    <a href="https://issuu.com/embl/docs/embl_magazine_summer_2019"><img
-                            src="wp-content/uploads/2019/10/inprint-mag.png"></a>
-                    <p class="vf-text--body vf-text-body--3">Issue 93 Summer 2019</p>
-                    <button class="vf-button vf-button--primary vf-button--sm">Download PDF</button>
-                </div>
-                <div class="vf-links | magazine-box-summary">
-                    <h4 class="vf-text vf-text-heading--5">Top Stories</h4>
-                    <ul class="vf-links__list | vf-list">
-                        <li class="vf-list__item">
-                            <a class="vf-list__link" href="JavaScript:Void(0);">
-                                VF’s top social media posts of 2017 and what we learned from them
-                            </a>
-                        </li>
-                        <li class="vf-list__item">
-                            <a class="vf-list__link" href="JavaScript:Void(0);">
-                                The VF Imaging Centre all about visibility
-                            </a>
-                        </li>
-                        <li class="vf-list__item">
-                            <a class="vf-list__link" href="JavaScript:Void(0);">
-                                Press office sprint 1 journalist personas
-                            </a>
-                        </li>
-                        <li class="vf-list__item">
-                            <a class="vf-list__link" href="JavaScript:Void(0);">
-                                A colour scheme for VF
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="magazine-archive" style="max-width: 300px;">
-                    <h4 class="vf-text vf-text-heading--5">Archive</h4>
-                    <p>Looking for past print editions of EMBLetc? Browse our archive, going back 20 years.
-                    </p>
-                    <button class="vf-button vf-button--primary vf-button--sm">Archive</button>
-                </div>
-            </div>
-        </main>
-    </div>
 	
+	<div class="embl-grid | embl-etc-container" style="grid-column-gap: 0; background-color: #fff">
+        <div class="embl-etc-left-col">
+		<h3 class="vf-text vf-text-heading--2 | embl-etc | embl-etc-heading">EMBL etc.</h3>
+		</div>
+        <div class="embl-etc-right-col">
+		<h3 class="vf-text vf-text-heading--4 | embl-etc">Read the latest Issues of our magazine - EMBL etc.</h3>
+			<div class="vf-grid | vf-grid__col-2">
+        <div class="magazine">
+				<img src="wp-content/uploads/2019/10/issue93.png">
+			<div class="topic-list" style="color: #fff;">
+				<h3 class="vf-text vf-text-heading--5 | embl-etc">Issue 93, Summer 2019</h3>
+							<ul class="vf-list vf-list">
+    <li class="vf-list__item">&ndash;&nbsp;Robots grow bio-inspired shapes</li>
+    <li class="vf-list__item">&ndash;&nbsp;Wielding the genetic scissors</li>
+    <li class="vf-list__item">&ndash;&nbsp;Twenty years of EMBLEM</li>
+</ul>
+
+				</div>
+					  <a class="vf-link | magazine-download" href="#">Download PDF</a>			
+		
+				</div>
+
+   <div class="magazine">
+				<img src="wp-content/uploads/2019/10/issue92.png">
+			<div class="topic-list" style="color: #fff;">
+				<h3 class="vf-text vf-text-heading--5 | embl-etc">Issue 92, Winter 2018</h3>
+							<ul class="vf-list vf-list">
+<li class="vf-list__item">&ndash;&nbsp;Constructing tissue shapes with light</li>
+    <li class="vf-list__item">&ndash;&nbsp;In the flesh</li>
+    <li class="vf-list__item">&ndash;&nbsp;Translating science into designs</li>
+</ul>
+			</div>
+			  <a class="vf-link | magazine-download" href="#">Download PDF</a>			
+
+				</div>
+    </div>
+<!-- 			<p class="vf-text--body">Looking for past print editions of EMBLetc? Browse our archive, going back 20 years.</p>
+			<a class="vf-link | magazine-download" href="#">Archive</a> -->
+		</div>
+    </div>
 </section>
 <?php get_template_part('partials/footer'); ?>

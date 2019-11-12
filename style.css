@@ -13,6 +13,72 @@ Text Domain:	 vf-wp-news-main
 	background-color: #f3f3f3;
 }
 
+/* ------ EMBL ETC ------ */
+.embl-etc-left-col {
+	margin-right: 0;
+}
+
+.magazine {
+	padding: 25px 0;
+}
+
+.embl-etc-right-col .magazine-download {
+	display: block;
+	color: #fff;
+}
+
+.embl-etc-right-col .embl-etc {
+	font-weight: 400;
+}
+
+.topic-list li {
+	margin-bottom: 0;
+}
+
+.magazine h3 {
+	margin-left: 15px;
+	font-weight: 400;
+}
+
+.magazine ul {
+	margin-left: 25px;
+	font-weight: 200;
+}
+
+.magazine img {
+	margin-right: 20px;
+	float:left;
+	width: 120px;
+	height: auto;
+	box-shadow: 1px 1px 2px #333;
+}
+
+.embl-etc {
+	color: #fff;
+}
+
+.embl-etc-left-col {
+	background-color: #1d5e68;
+}
+
+.embl-etc-right-col {
+	color: #fff;
+	background-color: #378386;
+	padding: 20px;
+
+}
+
+.embl-etc-left-col .embl-etc-heading {
+	margin: 5px 0 0 10px;
+	font-size: 40px;
+	font-style: italic;
+	font-weight: 100;
+}
+
+.embl-etc-container {
+	padding-top: 50px;
+}
+
 /* ------ AUTHOR PAGE ------ */
 
 .author-description h4 {
@@ -211,7 +277,7 @@ i {
 }
 
 .pow-container img {
-	max-width: 90%;
+	max-width: 100%;
 }
 
 .pow-article-summary {
