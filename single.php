@@ -3,7 +3,6 @@
 $title = esc_html(get_the_title());
 $author_url = get_author_posts_url(get_the_author_meta('ID'));
 $user_id = get_the_author_meta('ID');
-$avatar_url = get_avatar_img_url();
 
 
 get_template_part('partials/header');
@@ -17,12 +16,10 @@ the_post();
         <div class="article-left-col">
             <div class="vf-article-meta-information | author-box" style="display: block;">
                 <div class="vf-author | vf-article-meta-info__author">
+					<?php echo get_avatar( get_the_author_meta( 'ID' ), 48); ?>
                     <p class="vf-author__name | vf-text-body--5">
-                        <a class="vf-link" href="<?php echo $author_url; ?>"><?php the_author(); ?></a>
-                    </p>
-                    <a class="vf-author--avatar__link | vf-link" href="<?php echo $author_url; ?>">
-                        <?php echo '<img class="vf-author--avatar" src=" ' . $avatar_url . ' ">'; ?>
-                    </a>
+<a class= "vf-link" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), ); ?>"><?php the_author(); ?></a>                   
+					</p>
                 </div>
                 <div class="vf-meta__details">
                     <time class="vf-meta__date | vf-text-body--5" title="<?php the_time('c'); ?>"
@@ -98,70 +95,68 @@ the_post();
 		
         <div class="vf-inlay__content vf-u-background-color-ui--black | pow-container" style="padding-top: 0;">
             <main class="vf-inlay__content--full-width" style="margin: 0;">
-				
-				<!-- POW LOOP -->
-				
-                <?php $my_query = new WP_Query( 'category_name=picture-week&posts_per_page=1' );
+			
+
+            <!-- POW LOOP -->
+
+            <?php $my_query = new WP_Query( 'category_name=picture-week&posts_per_page=1' );
 while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
-                <div class="vf-grid vf-grid__col-2 | pow-article">
-                    <div class="pow-article-summary">
-                        <h3 class="vf-links__heading | pow-heading">Picture of the week</h3>&nbsp;&nbsp;<i
-                            class="fas fa-arrow-circle-right | icon-green"></i>
-                        <div class="pow-title">
-                            <a href="<?php the_permalink(); ?>" class="vf-summary__link"><?php echo the_title(); ?></a>
-                        </div>
-                        <p class="vf-summary__text"><?php echo get_the_excerpt(); ?></p>
+            <div class="vf-grid | vf-grid__col-2 | pow-article">
+                <div class="pow-article-summary">
+                    <h3 class="vf-links__heading | pow-heading">Picture of the week</h3>&nbsp;&nbsp;<i
+                        class="fas fa-arrow-circle-right | icon-green"></i>
+                    <div class="pow-title">
+                        <a href="<?php the_permalink(); ?>" class="vf-summary__link"><?php echo the_title(); ?></a>
                     </div>
-                    <div class="pow-artcle-thumbnail"><?php the_post_thumbnail(); ?></div>
+                    <p class="vf-summary__text"><?php echo get_the_excerpt(); ?></p>
                 </div>
-                <?php endwhile; ?>
-            </main>
-        </div>
+                <div class="pow-artcle-thumbnail"><?php the_post_thumbnail(); ?></div>
+            </div>
+            <?php endwhile; ?>
+        </main>
+    </div>
+	
+	
+	<div class="embl-grid | embl-etc-container" style="grid-column-gap: 0; background-color: #fff">
+        <div class="embl-etc-left-col">
+		<h3 class="vf-text vf-text-heading--2 | embl-etc | embl-etc-heading">EMBL etc.</h3>
+		</div>
+        <div class="embl-etc-right-col">
+		<h3 class="vf-text vf-text-heading--4 | embl-etc">Read the latest Issues of our magazine - EMBL etc.</h3>
+			<div class="vf-grid | vf-grid__col-2">
+        <div class="magazine">
+				<img src="wp-content/uploads/2019/02/issue93.png">
+			<div class="topic-list" style="color: #fff;">
+				<h3 class="vf-text vf-text-heading--5 | embl-etc">Issue 93, Summer 2019</h3>
+							<ul class="vf-list vf-list">
+    <li class="vf-list__item">&ndash;&nbsp;Robots grow bio-inspired shapes</li>
+    <li class="vf-list__item">&ndash;&nbsp;Wielding the genetic scissors</li>
+    <li class="vf-list__item">&ndash;&nbsp;Twenty years of EMBLEM</li>
+</ul>
+
+				</div>
+					  <a class="vf-link | magazine-download" href="#">Download PDF</a>			
 		
-        <div class="vf-inlay__content vf-u-background-color-ui--white">
-            <main class="vf-inlay__content--full-width">
-                <h3 class="vf-links__heading">Read the latest Issue of EMBL etc.</h3>&nbsp;&nbsp;<i
-                    class="fas fa-arrow-circle-right"></i>
-                <div class="vf-grid | magazine-box-content">
-                    <div class="magazine-box-cover">
-                        <a href="https://issuu.com/embl/docs/embl_magazine_summer_2019"><img
-                                src="wp-content/uploads/2019/10/inprint-mag.png"></a>
-                        <p class="vf-text--body vf-text-body--3">Issue 93 Summer 2019</p>
-                        <button class="vf-button vf-button--primary vf-button--sm">Download PDF</button>
-                    </div>
-                    <div class="vf-links | magazine-box-summary">
-                        <h4 class="vf-text vf-text-heading--5">Top Stories</h4>
-                        <ul class="vf-links__list | vf-list">
-                            <li class="vf-list__item">
-                                <a class="vf-list__link" href="JavaScript:Void(0);">
-                                    VF’s top social media posts of 2017 and what we learned from them
-                                </a>
-                            </li>
-                            <li class="vf-list__item">
-                                <a class="vf-list__link" href="JavaScript:Void(0);">
-                                    The VF Imaging Centre all about visibility
-                                </a>
-                            </li>
-                            <li class="vf-list__item">
-                                <a class="vf-list__link" href="JavaScript:Void(0);">
-                                    Press office sprint 1 journalist personas
-                                </a>
-                            </li>
-                            <li class="vf-list__item">
-                                <a class="vf-list__link" href="JavaScript:Void(0);">
-                                    A colour scheme for VF
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="magazine-archive" style="max-width: 300px;">
-                        <h4 class="vf-text vf-text-heading--5">Archive</h4>
-                        <p>Looking for past print editions of EMBLetc? Browse our archive, going back 20 years.</p>
-                        <button class="vf-button vf-button--primary vf-button--sm">Archive</button>
-                    </div>
-                </div>
-            </main>
-        </div>
+				</div>
+
+   <div class="magazine">
+				<img src="wp-content/uploads/2019/02/issue92.png">
+			<div class="topic-list" style="color: #fff;">
+				<h3 class="vf-text vf-text-heading--5 | embl-etc">Issue 92, Winter 2018</h3>
+							<ul class="vf-list vf-list">
+<li class="vf-list__item">&ndash;&nbsp;Constructing tissue shapes with light</li>
+    <li class="vf-list__item">&ndash;&nbsp;In the flesh</li>
+    <li class="vf-list__item">&ndash;&nbsp;Translating science into designs</li>
+</ul>
+			</div>
+			  <a class="vf-link | magazine-download" href="#">Download PDF</a>			
+
+				</div>
+    </div>
+<!-- 			<p class="vf-text--body">Looking for past print editions of EMBLetc? Browse our archive, going back 20 years.</p>
+			<a class="vf-link | magazine-download" href="#">Archive</a> -->
+		</div>
+    </div>
 		
     </section>
 <?php get_template_part('partials/footer');?>

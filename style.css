@@ -9,11 +9,13 @@ Version:		 1.0.0
 Text Domain:	 vf-wp-news-main
 */
 
+
 .vf-body {
 	background-color: #f3f3f3;
 }
 
 /* ------ EMBL ETC ------ */
+
 .embl-etc-left-col {
 	margin-right: 0;
 }
@@ -42,7 +44,7 @@ Text Domain:	 vf-wp-news-main
 
 .magazine ul {
 	margin-left: 25px;
-	font-weight: 200;
+	font-weight: 300;
 }
 
 .magazine img {
@@ -76,10 +78,14 @@ Text Domain:	 vf-wp-news-main
 }
 
 .embl-etc-container {
-	padding-top: 50px;
+	padding-top: 5px;
 }
 
 /* ------ AUTHOR PAGE ------ */
+
+.author-avatar img {
+	border-radius: 500px;
+}
 
 .author-description h4 {
 	color: #fff;
@@ -131,6 +137,11 @@ Text Domain:	 vf-wp-news-main
 
 /* ---CONTENT PAGE----*/
 
+.vf-author img {
+	min-width: 48px;
+	border-radius: 500px;
+}
+
 .social-share-box {
 	padding-top: 12px;
 	width: 40px;
@@ -169,6 +180,10 @@ Text Domain:	 vf-wp-news-main
 .latest-title-column {
 	color: #3B6FB6;
 	min-width: 150px;
+}
+
+.latest-title-column h3 {
+	color: #3B6FB6;
 }
 
 .vf-inlay__content h3 {
@@ -214,6 +229,10 @@ i {
 	font-size: 16px;
 }
 
+.hero-left-column article {
+	width: min-content;
+}
+
 .category-top-stories article,
 .hero-right-column article,
 .hero-left-column article,
@@ -235,7 +254,7 @@ i {
 }
 
 .hero-left-column .article-summary {
-	height: 319px;
+	height: 359px;
 }
 
 .hero-right-column article {
@@ -298,10 +317,6 @@ i {
 	background-color: #ffffff;
 }
 
-.vf-grid .hero-unit {
-    grid-column-gap: 15px;
-}
-
 .vf-summary--article img {
     max-width: 100%;
 }
@@ -319,7 +334,3 @@ ul {
 .hero-container .article-summary {
 	padding: 15px 0 0 0;
 }
-
-
-
-
