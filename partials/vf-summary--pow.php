@@ -6,7 +6,12 @@ $author_url = get_author_posts_url(get_the_author_meta('ID'));
 ?>
 
 <article class="vf-summary vf-summary--article">
+	<div class="post-image">
+			<a href="<?php the_permalink(); ?>">
 	<?php the_post_thumbnail(); ?>
+	</a>
+			</div>
+
 	<div class="article-summary">
  <h2 class="vf-summary__title">
     <a href="<?php the_permalink(); ?>" class="vf-summary__link"><?php echo $title; ?></a>

@@ -25,52 +25,28 @@ if (is_search()) {
   $title = sprintf(__('%s Archives:', 'vfwp'), $tax->labels->singular_name);
 }
 
-?><section class="vf-inlay">
+?>
+
+<section class="vf-inlay">
     <div class="vf-inlay__content" style="background-color: #fff;">
         <main class="vf-inlay__content--full-width category-container">
-				
-				            <div class="latest-title-column">
+            <div class="latest-title-column">
                 <h3 class="vf-links__heading"><?php wp_title(''); ?></h3>&nbsp;&nbsp;<i class="fas fa-arrow-circle-right"></i>
-											</div>
-
-<div class="vf-grid vf-grid__col-4 category-latest">		
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); 
-if ( $post->ID == $do_not_duplicate ) continue; ?>	
-			       <?php include(locate_template('partials/vf-summary--article.php', false, false)); ?>
-<?php endwhile; endif; ?>
-		</div>		
-		
-     <?php vf_pagination();
-      ?>
-
-
-          
-        </main>
-		        <hr class="vf-divider">
-
-    </div>
-
-    <div class="vf-inlay__content" style="background-color: #fff;">
-        <main class="vf-inlay__content--full-width">
-            <div class="vf-grid category-latest category-top-stories">
-                <div style="min-width: 150px;">
-                    <h3 class="vf-links__heading">Top stories</h3>&nbsp;&nbsp;<i class="fas fa-arrow-circle-right"></i>
-                </div>
-                <?php $popular = new WP_Query(array('posts_per_page'=>3, 'meta_key'=>'popular_posts', 'orderby'=>'meta_value_num', 'order'=>'DESC', 'cat' => get_query_var('cat')));
-	while ($popular->have_posts()) : $popular->the_post(); 
-	include(locate_template('partials/vf-summary--article-no-excerpt.php', false, false));
-	?>
-                <?php endwhile; wp_reset_postdata(); ?>
-
             </div>
+            <div class="vf-grid vf-grid__col-3 category-latest">
+                <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); 
+if ( $post->ID == $do_not_duplicate ) continue; ?>
+                <?php include(locate_template('partials/vf-summary--article.php', false, false)); ?>
+                <?php endwhile; endif; ?>
+            </div>
+            <?php vf_pagination();?>
         </main>
     </div>
+
+    <?php include(locate_template('partials/embletc-container.php', false, false)); ?>
+
+    <?php include(locate_template('partials/newsletter-container.php', false, false)); ?>
 
 </section>
 
-
-<?php
-
-get_template_part('partials/footer');
-
-?>
+<?php get_template_part('partials/footer');?>
