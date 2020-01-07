@@ -17,13 +17,13 @@ the_post();
 			<div class="vf-author | vf-article-meta-info__author">
 				<?php echo get_avatar( get_the_author_meta( 'ID' ), 48); ?>
 				<p class="vf-author__name | vf-text-body--5">
-					<a class="vf-link" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), ); ?>"><?php the_author(); ?></a>
+					<a class="vf-link" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a>
 				</p>
 			</div>
 			<div class="vf-meta__details">
 				<time class="vf-meta__date | vf-text-body--5" title="<?php the_time('c'); ?>"
 					datetime="<?php the_time('c'); ?>"><?php the_time(get_option('date_format')); ?></time>
-				<p class="vf-meta__date | vf-text-body--5"><?php echo reading_time(); ?> READ</p>
+				<p class="vf-meta__date | vf-text-body--5"><?php echo reading_time(); ?> read</p>
 			</div>
 			<div class="vf-meta__details">
 				<p class="vf-meta__topics | vf-text-body--5">Topics:&nbsp;
@@ -46,7 +46,7 @@ the_post();
 			</figcaption>
 		</figure>
 			<?php the_content(); ?>
-		<p class="vf-summary__date"><?php the_tags(); ?></p>
+		<p class="vf-text--body vf-text-body--3"><?php the_tags(); ?></p>
 
 		<div class="vf-links vf-links--tight vf-links__list--s | vf-u-margin__top--xxl">
 			<h3 class="vf-links__heading">Source article</h3>

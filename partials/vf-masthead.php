@@ -9,9 +9,7 @@
     <div class="vf-masthead__inner">
         <div class="vf-masthead__title" style="margin-left: 12px;">
             <h1 class="vf-masthead__heading">
-                <a class="vf-masthead__heading__link" href="JavaScript:Void(0);">EMBL News</a>
-                <span class="vf-masthead__heading--additional">News from the European Molecular Biology
-                    Laboratory</span>
+                <a class="vf-masthead__heading__link" href="<?php echo get_home_url(); ?>">EMBL News</a>
             </h1>
         </div>
     </div>

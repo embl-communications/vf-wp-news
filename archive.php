@@ -42,6 +42,8 @@ if ( $post->ID == $do_not_duplicate ) continue; ?>
             <?php vf_pagination();?>
         </main>
     </div>
+	
+	<?php include(locate_template('partials/archive-container.php', false, false)); ?>
 
     <?php include(locate_template('partials/embletc-container.php', false, false)); ?>
 

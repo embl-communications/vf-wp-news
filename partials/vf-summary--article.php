@@ -6,12 +6,12 @@ $author_url = get_author_posts_url(get_the_author_meta('ID'));
 ?>
 <article class="vf-summary vf-summary--article">
 	<div class="post-image">
-		<a href="<?php the_permalink(); ?>">
+		<a style="display: grid;" href="<?php the_permalink(); ?>">
 		    <?php the_post_thumbnail(); ?>
 </a>
 	</div>
     <div class="article-summary">
-        <h2 class="vf-summary__title | vf-u-margin__bottom--sm">
+        <h2 class="vf-summary__title | vf-u-margin__bottom--sm vf-u-margin__top--sm">
             <a href="<?php the_permalink(); ?>" class="vf-summary__link"><?php echo $title; ?></a>
         </h2>
         <p class="vf-summary__text | vf-u-margin__bottom--sm"><?php echo get_the_excerpt(); ?></p>
@@ -23,7 +23,7 @@ $author_url = get_author_posts_url(get_the_author_meta('ID'));
         </span>
         <div class="vf-summary__meta | topics-info">
             <p class="vf-summary__meta">Topics:&nbsp;</p><a class="vf-link"><?php the_category(); ?>&nbsp;&nbsp;&nbsp;</a>
-			<p class="vf-summary__meta"><?php echo reading_time(); ?> READ</p>
+			<p class="vf-summary__meta"><?php echo reading_time(); ?> read</p>
         </div>
     </div>
 </article>

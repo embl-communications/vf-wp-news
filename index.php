@@ -43,16 +43,18 @@ if (is_search()) {
 ?>
 <section class="vf-inlay | vf-u-background-color--white">
 	<section class="vf-inlay__content | vf-u-background-color-ui--grey | hero-container">
-		<main class="vf-inlay__content--main">
+		<main class="vf-inlay__content--main | vf-u-margin--0">
 			<div class="vf-content">
 				<div class="hero-left-column">
-					<?php query_posts(array('posts_per_page' => 1, 'meta_key' => 'featured',
-		'meta_value' => '1' ));
+					<?php 
+					$mainPostLoop = new WP_Query (array('posts_per_page' => 1, 'meta_key' => 'featured', 'meta_value' => '1' ));
 $ids = array();
-while (have_posts()) : the_post();
+while ($mainPostLoop->have_posts()) : $mainPostLoop->the_post();
 $ids[] = get_the_ID(); ?>
 					<?php include(locate_template('partials/vf-summary--article--color.php', false, false)); ?>
 					<?php endwhile;?>
+					<?php wp_reset_postdata(); ?>
+
 				</div>
 			</div>
 		</main>
@@ -60,12 +62,14 @@ $ids[] = get_the_ID(); ?>
 		<main class="vf-inlay__content--additional">
 			<div class="hero-right-column">
 				<?php
-query_posts(array('post__not_in' => $ids, 'posts_per_page' => 2, 'meta_key' => 'featured',
+$cardsPostLoop = new WP_Query(array('post__not_in' => $ids, 'posts_per_page' => 2, 'meta_key' => 'featured',
 		'meta_value' => '1' ));
-while (have_posts()) : the_post(); 
+while ($cardsPostLoop->have_posts()) : $cardsPostLoop->the_post(); 
 					$ids[] = get_the_ID(); ?>
 				<?php include(locate_template('partials/vf-summary--article-no-excerpt.php', false, false)); ?>
 				<?php endwhile; ?>
+				<?php wp_reset_postdata(); ?>
+
 			</div>
 		</main>
 	</section>
@@ -74,14 +78,17 @@ while (have_posts()) : the_post();
 		<main class="vf-inlay__content--full-width | latest-posts-container">
 			<div class="embl-grid latest">
 				<div class="latest-title-column">
-					<a href="<?php site_url(); ?>/archive" class="vf-link vf-links__heading">Latest</a>&nbsp;&nbsp;<i class="fas fa-arrow-circle-right"></i>
+					<a href="<?php site_url(); ?>/archive" class="vf-link vf-links__heading">Latest&nbsp;&nbsp;<i class="fas fa-arrow-circle-right"></i></a>
 				</div>
 				<div class="vf-grid vf-grid__col-3">
-					<?php query_posts(array('post__not_in' => $ids, 'posts_per_page' => 3));
-					while (have_posts()) : the_post(); ?>
+					<?php 
+					$latestPostLoop = new WP_Query(array('post__not_in' => $ids, 'posts_per_page' => 3));
+					while ($latestPostLoop->have_posts()) : $latestPostLoop->the_post(); ?>
 					<?php	$ids[] = get_the_ID(); ?>
 					<?php include(locate_template('partials/vf-summary--article.php', false, false)); ?>
 					<?php endwhile; ?>
+					<?php wp_reset_postdata(); ?>
+
 				</div>
 			</div>
 
@@ -89,12 +96,15 @@ while (have_posts()) : the_post();
 				<div class="latest-title-column">
 				</div>
 				<div class="vf-grid vf-grid__col-3">
-					<?php query_posts(array('post__not_in' => $ids, 'posts_per_page' => 3));
-	while (have_posts()) : the_post(); ?>
+					<?php 
+					$latestPostLoop2 = new WP_Query(array('post__not_in' => $ids, 'posts_per_page' => 3));
+	while ($latestPostLoop2->have_posts()) : $latestPostLoop2->the_post(); ?>
 					<?php	$ids[] = get_the_ID(); ?>
 
 					<?php include(locate_template('partials/vf-summary--article.php', false, false)); ?>
 					<?php endwhile; ?>
+					<?php wp_reset_postdata(); ?>
+
 				</div>
 			</div>
 			<hr class="vf-divider">
@@ -102,16 +112,19 @@ while (have_posts()) : the_post();
 			<div class="embl-grid latest">
 				<div class="latest-title-column">
 					<a href="<?php echo esc_url( $science_link ); ?>"
-						class="vf-link vf-links__heading">Science</a>&nbsp;&nbsp;<i
-						class="fas fa-arrow-circle-right"></i>
+						class="vf-link vf-links__heading">Science&nbsp;&nbsp;<i
+						class="fas fa-arrow-circle-right"></i></a>
 				</div>
 				<div class="vf-grid vf-grid__col-3">
-					<?php query_posts(array('category_name' => 'science', 'post__not_in' => $ids, 'posts_per_page' => 3));
-	while (have_posts()) : the_post(); ?>
+					<?php 
+					$scienceLoop = new WP_Query(array('category_name' => 'science', 'post__not_in' => $ids, 'posts_per_page' => 3));
+	while ($scienceLoop->have_posts()) : $scienceLoop->the_post(); ?>
 					<?php	$ids[] = get_the_ID(); ?>
 
 					<?php include(locate_template('partials/vf-summary--article-no-excerpt.php', false, false)); ?>
 					<?php endwhile; ?>
+					<?php wp_reset_postdata(); ?>
+
 				</div>
 			</div>
 			<hr class="vf-divider">
@@ -119,15 +132,18 @@ while (have_posts()) : the_post();
 			<div class="embl-grid latest">
 				<div class="latest-title-column">
 					<a href="<?php echo esc_url( $lab_link ); ?>" class="vf-link vf-links__heading">Lab
-						Matters</a>&nbsp;&nbsp;<i class="fas fa-arrow-circle-right"></i>
+						Matters&nbsp;&nbsp;<i class="fas fa-arrow-circle-right"></i></a>
 				</div>
 				<div class="vf-grid vf-grid__col-3">
-					<?php query_posts(array('category_name' => 'lab-matters','post__not_in' => $ids, 'posts_per_page' => 3));
-	while (have_posts()) : the_post(); ?>
+					<?php 
+					$labMattersLoop = new WP_Query(array('category_name' => 'lab-matters','post__not_in' => $ids, 'posts_per_page' => 3));
+	while ($labMattersLoop->have_posts()) : $labMattersLoop->the_post(); ?>
 					<?php	$ids[] = get_the_ID(); ?>
 
 					<?php include(locate_template('partials/vf-summary--article-no-excerpt.php', false, false)); ?>
 					<?php endwhile; ?>
+					<?php wp_reset_postdata(); ?>
+
 				</div>
 			</div>
 			<hr class="vf-divider">
@@ -135,15 +151,18 @@ while (have_posts()) : the_post();
 			<div class="embl-grid latest">
 				<div class="latest-title-column">
 					<a href="<?php echo esc_url( $alumni_link ); ?>"
-						class="vf-link vf-links__heading">Alumni</a>&nbsp;&nbsp;<i
-						class="fas fa-arrow-circle-right"></i> </div>
+						class="vf-link vf-links__heading">Alumni&nbsp;&nbsp;<i
+						class="fas fa-arrow-circle-right"></i></a> </div>
 				<div class="vf-grid vf-grid__col-3">
-					<?php query_posts(array('category_name' => 'alumni','post__not_in' => $ids, 'posts_per_page' => 3));
-	while (have_posts()) : the_post(); ?>
+					<?php 
+					$alumniLoop = new WP_Query(array('category_name' => 'alumni','post__not_in' => $ids, 'posts_per_page' => 3));
+	while ($alumniLoop->have_posts()) : $alumniLoop->the_post(); ?>
 					<?php	$ids[] = get_the_ID(); ?>
 
 					<?php include(locate_template('partials/vf-summary--article-no-excerpt.php', false, false)); ?>
 					<?php endwhile; ?>
+					<?php wp_reset_postdata(); ?>
+
 				</div>
 			</div>
 			<hr class="vf-divider">
@@ -151,14 +170,16 @@ while (have_posts()) : the_post();
 			<div class="embl-grid latest">
 				<div class="latest-title-column">
 					<a href="<?php echo esc_url( $events_link ); ?>"
-						class="vf-link vf-links__heading">Events</a>&nbsp;&nbsp;<i
-						class="fas fa-arrow-circle-right"></i> </div>
+						class="vf-link vf-links__heading">Events&nbsp;&nbsp;<i
+						class="fas fa-arrow-circle-right"></i></a> </div>
 				<div class="vf-grid vf-grid__col-3">
-					<?php query_posts(array('category_name' => 'events','post__not_in' => $ids, 'posts_per_page' => 3));
-	while (have_posts()) : the_post(); ?>
+					<?php 
+					$eventsLoop = new WP_Query(array('category_name' => 'events','post__not_in' => $ids, 'posts_per_page' => 3));
+	while ($eventsLoop->have_posts()) : $eventsLoop->the_post(); ?>
 					<?php	$ids[] = get_the_ID(); ?>
 					<?php include(locate_template('partials/vf-summary--article-no-excerpt.php', false, false)); ?>
 					<?php endwhile; ?>
+					<?php wp_reset_postdata(); ?>
 				</div>
 			</div>
 		</main>

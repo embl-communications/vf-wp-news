@@ -12,7 +12,7 @@ while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
 				<p class="vf-summary__text"><?php echo get_the_excerpt(); ?></p>
 			</div>
 			<a href="<?php the_permalink(); ?>">
-				<div class="pow-artcle-thumbnail post-image"><?php the_post_thumbnail(); ?></div>
+				<div class="post-image" style="display: flex;"><?php the_post_thumbnail(); ?></div>
 			</a>
 		</div>
 		<?php endwhile; ?>
